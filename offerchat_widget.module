@@ -1,0 +1,52 @@
+<?php
+/**
+ * Implements hook_menu().
+ */
+function offerchat_widget_menu() {
+  $items = array();
+
+  $items['admin/config/services/offerchat_widget'] = array(
+    'title' => 'Offerchat Widget',
+    'description' => 'Configuration for Offerchat widget module',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('offerchat_widget_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback: Current posts settings
+ *
+ * @see offerchat_widget_menu()
+ */
+function offerchat_widget_form($form, &$form_state) {
+  $form['offerchat_api_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Offerchat API key'),
+    '#default_value' => variable_get('offerchat_api_key'),
+    '#required' => TRUE,
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_page_alter() to insert JavaScript to the appropriate scope/region of the page.
+ */
+function offerchat_widget_page_alter(&$page) {
+  $api_key = variable_get('offerchat_api_key');
+
+  if ($api_key) {
+    $script  = "var ofc_key = '{$api_key}';";
+    $script .= "(function(){";
+    $script .= "var oc = document.createElement('script'); oc.type = 'text/javascript'; oc.async = true;";
+    $script .= "oc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'd1cpaygqxflr8n.cloudfront.net/p/js/widget.min.js?r=1';";
+    $script .= "var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(oc, s);";
+    $script .= "}());";
+
+    drupal_add_js($script, array('scope' => 'footer', 'type' => 'inline'));
+  }
+}
