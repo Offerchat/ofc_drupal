@@ -1,4 +1,4 @@
-Offerchat Drupal Plugin
+Offerchat Drupal Module
 ===================
 
 This plugin will enable offerchat users to easily install offerchat widget to their wordpress websites.
