@@ -39,7 +39,7 @@ Check out the [Offerchat](http://www.offerchat.com "Offerchat") website to know 
 Installation
 ------------
 
-1. Download the module [here] (http://d1cpaygqxflr8n.cloudfront.net/plugins/offechat_widget.zip "here")
+1. Download the module [here] (http://d1cpaygqxflr8n.cloudfront.net/plugins/offerchat_widget.zip "here")
 2. Click "Install new module" on your admin modules page.
 3. Upload the module by choosing the file from yuor computer.
 4. Enable "Offerchat Widget" on your modules page and click "Save configuration".
