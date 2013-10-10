@@ -1,0 +1,7 @@
+name = Offerchat Widget
+description = Allows you to view the Offerchat widget in all of your page by adding the Offerchat widget js code.
+core = 7.x
+
+; NEW LINE
+configure = admin/config/services/offerchat_widget
+
