@@ -40,9 +40,10 @@ Installation
 ------------
 
 1. Download the module [here] (http://d1cpaygqxflr8n.cloudfront.net/plugins/offechat_widget.zip "here")
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Navigate to `Plugins Menu > Offerchat` and enter your `API Key` then press Submit button
-4. Done! Check your website if the offerchat widget is up.
+2. Click "Install new module" on your admin modules page.
+3. Upload the module by choosing the file from yuor computer.
+4. Enable "Offerchat Widget" on your modules page and click "Save configuration".
+5. Configure Offerchat widget and add your API key.
 
 Frequently Asked Questions
 ==========================
